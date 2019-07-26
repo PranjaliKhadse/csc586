@@ -29,4 +29,4 @@ slapd slapd/allow_ldap_v2 boolean false
 sudo apt-get install -y slapd ldap-utils
 #sudo dpkg-reconfigure slapd
 sudo ufw allow ldap
-echo   -n   $(slappasswd -s rammy) | md5sum | awk '{print $(slappasswd -s rammy)}'
+echo   -n   $(slappasswd -s rammy) | awk '{print $(slappasswd -s rammy)}'
