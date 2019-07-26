@@ -2,7 +2,7 @@
 #!/bin/bash 
 sudo apt update
 
-export DEBIAN_FRONTEND='non-interactive'
+export DEBIAN_FRONTEND=non-interactive
 
 echo -e "
 slapd   slapd/root_password password  password pkhadse
