@@ -9,7 +9,7 @@ echo "Options(Optional):-i or -n for interactive or non-interactive mode"
 echo "Arguments :list of usernames"
 echo "Every username must match this regular expression: '^[a-z][a-z0-9_]*$' "
 exit 0
-if [[ ! $Arg1 =~ $re && $Arg1 == *i* && $Arg1 != * ]]; then
+elif [[ ! $Arg1 =~ $re && $Arg1 == *i* && $Arg1 != * ]]; then
 echo "options and arguments ok and running in interactive mode"
 exit 0
 elif [[ $Arg1 == * && ! $Arg1 =~ $re && $Arg1 != *i* ]]; then
