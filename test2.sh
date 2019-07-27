@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Arg1=$1
-re="^[a-z][a-z0-9_]*$"
+re="![a-z][a-z0-9_]+$"
 if [[ $Arg1 =~ $re && $Arg1 == *i* && $Arg1 != * ]]; then
 echo "options and arguments ok and running in interactive mode"
 exit 0
