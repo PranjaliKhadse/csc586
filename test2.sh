@@ -15,7 +15,7 @@ exit 0
 elif [[ $Arg1 == * && ! $Arg1 =~ $re && $Arg1 != *i* ]]; then
 echo "options and arguments ok"
 echo "Running in non interactive mode"
-elif [[ ! $Arg1 =~ $re ]]; then
+elif [[  $Arg1 == * && $2 =~ $re ]]; then
 echo "options and argument ok running in non-interactive mode"
 exit 0
 else
