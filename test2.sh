@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Arg1=$1
-re="[a-z][a-z0-9_]+$"
+re="^[a-z][a-z0-9_]*$"
 if [[ $# -eq 0 ]]; then
 echo "Please provide correct arguments and options"
 echo "Usage: ./check_arg.sh[-i][-n][USERS]"
