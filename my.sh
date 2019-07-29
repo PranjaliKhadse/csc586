@@ -32,8 +32,8 @@ sudo ufw allow ldap
 ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test -f basedn.ldif
 
 #echo   -n  PASS=$(slappasswd -s rammy) | awk '{print PASS}'
-PASS=$(slappasswd -s rammy)
-cat /local/repository/users.ldif
+#PASS=$(slappasswd -s rammy)
+#cat /local/repository/users.ldif
 
 
 
