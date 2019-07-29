@@ -32,26 +32,11 @@ sudo ufw allow ldap
 ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test -f basedn.ldif
 
 #echo   -n  PASS=$(slappasswd -s rammy) | awk '{print PASS}'
-PASS=$(slappasswd -s rammy)
+P=$(slappasswd -s rammy)
 #cat /local/repository/users.ldif
-touch users.ldif
-echo -e "
-dn: uid=student,ou=People,dc=clemson,dc=cloudlab,dc=us
-objectClass: inetOrgPerson
-objectClass: posixAccount
-objectClass: shadowAccount
-uid: student
-sn: Ram
-givenName: Golden
-cn: student
-displayName: student
-uidNumber: 10000
-gidNumber: 5000
-uerPassword: $PASS
-gecos: Golden Ram
-loginShell: /bin/dash
-homeDirectory: /home/student " >>users.ldif
-cat users.ldif
+
+echo -e "userPassword: $P" >> /local/repository/users.ldif
+cat /local/repository/users.ldif
 
 
 
