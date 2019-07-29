@@ -27,7 +27,7 @@ slapd   slapd/dump_database     select  when needed
 
 
 sudo apt-get install -y slapd ldap-utils
-sudo dpkg-reconfigure slapd
+#sudo dpkg-reconfigure slapd
 sudo ufw allow ldap
 ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test -f basedn.ldif
 
