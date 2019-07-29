@@ -55,3 +55,4 @@ loginShell: /bin/dash
 homeDirectory: /home/student
 EOF
 sudo dpkg-reconfigure slapd
+sudo ufw allow ldap
