@@ -28,3 +28,32 @@ slapd slapd/allow_ldap_v2 boolean false
 
 
 sudo apt-get install -y slapd ldap-utils
+sudo dpkg-reconfigure slapd
+sudo ufw allow ldap
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test -f basedn.ldif
+P=$(slappasswd -s rammy)
+#cat /local/repository/users.ldif
+
+#echo -e "userPassword: $P" >> /local/repository/users.ldif
+#cat /local/repository/users.ldif
+chmod 777 /local/repository/users.ldif
+cat <<'EOF' > /local/repository/users.ldif
+dn: uid=student,ou=People,dc=clemson,dc=cloudlab,dc=us
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: shadowAccount
+uid: student
+sn: Ram
+givenName: Golden
+cn: student
+displayName: student
+uidNumber: 10000
+gidNumber: 5000
+userPassword: $P
+gecos: Golden Ram
+loginShell: /bin/dash
+homeDirectory: /home/student
+EOF
+
+# Be safe again 
+chmod 744 /local/repository/users.ldif
