@@ -35,7 +35,7 @@ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test -f basedn.ldif
 PASS=$(slappasswd -s rammy)
 #cat /local/repository/users.ldif
 touch users.ldif
-echo "
+echo -e "
 dn: uid=student,ou=People,dc=clemson,dc=cloudlab,dc=us
 objectClass: inetOrgPerson
 objectClass: posixAccount
@@ -47,7 +47,7 @@ cn: student
 displayName: student
 uidNumber: 10000
 gidNumber: 5000
-uerPassword: $P
+uerPassword: $PASS
 gecos: Golden Ram
 loginShell: /bin/dash
 homeDirectory: /home/student " >>users.ldif
