@@ -63,7 +63,7 @@ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -W -f users.ldif
 
 ldapsearch -x -LLL -b dc=clemson,dc=cloudlab,dc=us 'uid=student' cn gidNumber
 
-#sudo apt-get update
+#sudo apt update
 
 #sudo apt install -y libnss-ldap libpam-ldap ldap-utils
 
