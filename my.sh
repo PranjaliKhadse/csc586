@@ -5,12 +5,12 @@ sudo apt-get update
 export DEBIAN_FRONTEND=noninteractive
 
 echo -e " 
-slapd slapd/password1 password test123
-slapd slapd/internal/adminpw password test123
-slapd slapd/internal/generated_adminpw password test123
-slapd slapd/password2 password test123
-slapd slapd/root_password password test123
-slapd slapd/root_password_again password test23
+slapd slapd/password1 password royal
+slapd slapd/internal/adminpw password royal
+slapd slapd/internal/generated_adminpw password royal
+slapd slapd/password2 password royal
+slapd slapd/root_password password royal
+slapd slapd/root_password_again password royal
 slapd slapd/unsafe_selfwrite_acl note
 slapd slapd/purge_database boolean false
 slapd slapd/domain string clemson.cloudlab.us
@@ -38,7 +38,7 @@ sudo apt-get install -y slapd ldap-utils
 sudo ufw allow ldap 
 
 # Populate LDAP
-ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test123 -f basedn.ldif
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w royal -f basedn.ldif
 
 # Generate password hash
 PASS=$(slappasswd -s rammy)
@@ -61,7 +61,7 @@ homeDirectory: /home/student
 EOF
 
 # Populate LDAP
-ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w test123 -f users.ldif 
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w royal -f users.ldif 
 
 # Test LDAP
 ldapsearch -x -LLL -b dc=clemson,dc=cloudlab,dc=us 'uid=student' cn gidNumber
