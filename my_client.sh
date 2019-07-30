@@ -7,8 +7,8 @@ sudo apt update
 #change the fronend to noninteractive, avoiding prompts for automation
 export DEBIAN_FRONTEND=noninteractive
 echo "
-ldap_auth_config        ldap_auth_config/bindpw password abcd123
-ldap_auth_config        ldap_auth_config/rootbindpw password abcd123
+ldap_auth_config        ldap_auth_config/bindpw password royal
+ldap_auth_config        ldap_auth_config/rootbindpw password royal
 ldap-auth-config        ldap-auth-config/dbrootlogin    boolean true
 ldap-auth-config        ldap-auth-config/pam_password   select  md5
 ldap-auth-config        ldap-auth-config/move-to-debconf        boolean true
