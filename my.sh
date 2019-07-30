@@ -58,7 +58,7 @@ EOF
 
 # Be safe again 
 chmod 744 /local/repository/users.ldif
-ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -W -f users.ldif
+ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w -f users.ldif
 ldapsearch -x -LLL -b dc=clemson,dc=cloudlab,dc=us 'uid=student' cn gidNumber
 
 
