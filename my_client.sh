@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ADMIN_PASSWORD="test"
+ADMIN_PASSWORD="royal"
 #updates the system repo database
 sudo apt update
 
