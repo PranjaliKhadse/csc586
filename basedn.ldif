@@ -1,4 +1,3 @@
-
 dn: ou=People,dc=clemson,dc=cloudlab,dc=us
 objectClass: organizationalUnit
 ou: People
@@ -11,5 +10,3 @@ dn: cn=CSC,ou=Groups,dc=clemson,dc=cloudlab,dc=us
 objectClass: posixGroup
 cn: CSC586
 gidNumber: 5000
-
-
