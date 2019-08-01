@@ -42,6 +42,8 @@ ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w royal -f /local/repositor
 
 # Generate password hash
 PASS=$(slappasswd -s rammy)
+chmod 777 /etc/ldap/ldap.conf
+
 cat <<EOF >/local/repository/users.ldif
 dn: uid=student,ou=People,dc=clemson,dc=cloudlab,dc=us
 objectClass: inetOrgPerson
@@ -59,7 +61,7 @@ gecos: Golden Ram
 loginShell: /bin/dash
 homeDirectory: /home/student
 EOF
-
+chmod 744 /etc/ldap/ldap.conf
 # Populate LDAP
 ldapadd -x -D cn=admin,dc=clemson,dc=cloudlab,dc=us -w royal -f /local/repository/users.ldif 
 
